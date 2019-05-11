@@ -1,0 +1,3 @@
+websocket_server: wss://echo.websocket.org
+retry_connect: 5
+retry_time: 5000 #ms
