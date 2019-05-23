@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="WSChat" target="1.8" />
+      <module name="WSChat" target="9" />
     </bytecodeTargetLevel>
   </component>
 </project>
