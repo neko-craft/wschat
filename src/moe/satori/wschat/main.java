@@ -21,7 +21,7 @@ public class main extends JavaPlugin {
             public void run() {
                 try {
                     client = new websocket( new URI(ws_server_url));
-                    Bukkit.getLogger().info("Connectig to Server: " + ws_server_url);
+                    Bukkit.getLogger().info("Connectig to WebSocket Server: " + ws_server_url);
                     client.connect();
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -37,7 +37,7 @@ public class main extends JavaPlugin {
         if (ws_server_url != "") {
             connect();
             Bukkit.getLogger().info("Start Listening Chat Events");
-            this.getServer().getPluginManager().registerEvents(new asynchat(), this);
+            this.getServer().getPluginManager().registerEvents(new events(), this);
         } else {
             Bukkit.getLogger().info("WebSocket Server URL Missing");
         }
