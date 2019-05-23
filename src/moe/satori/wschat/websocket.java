@@ -29,6 +29,19 @@ public class websocket extends WebSocketClient {
         main.retry = 0;
         main.connected = true;
         Bukkit.getLogger().info("WebSocket Server Connected");
+        String handshake = utils.toJSON(Map.of(
+                "method", "handshake",
+                "version", Bukkit.getVersion(),
+                "player_count", Bukkit.getOfflinePlayers().length,
+                "server", Map.of(
+                        "host", Bukkit.getIp(),
+                        "port", Bukkit.getPort(),
+                        "bukkit_version", Bukkit.getBukkitVersion(),
+                        "max_players", Bukkit.getMaxPlayers()
+                )
+
+        ));
+        main.client.send(handshake);
     }
 
     @Override
@@ -55,7 +68,7 @@ public class websocket extends WebSocketClient {
                 }
             }
         }.runTaskAsynchronously(main.main);
-        Bukkit.getLogger().info( "Connection closed by " + ( remote ? "remote peer" : "us" ) + " Code: " + code);
+        Bukkit.getLogger().info( "Connection closed by " + ( remote ? "remote peer" : "us" ) + ", Error Code: " + code);
     }
 
     @Override
