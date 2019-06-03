@@ -2,3 +2,8 @@ name: WsChat
 main: moe.satori.wschat.main
 version: 1.0.0
 author: AkechiSatori
+commands:
+  wschat:
+    description: "configure wschat"
+    usage: "/wschat [reconnect]"
+    permission: wschat.reconnect
