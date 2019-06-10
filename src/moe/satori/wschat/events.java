@@ -119,7 +119,8 @@ public class events implements Listener {
                 "display", player.getDisplayName(),
                 "uuid", player.getUniqueId().toString(),
                 "ip", player.getAddress().getHostString(),
-                "message", event.getMessage()
+                "message", event.getMessage(),
+                "canceld", event.isCancelled()
         ));
         if (main.connected) {
             new BukkitRunnable() {
