@@ -120,7 +120,7 @@ public class events implements Listener {
                 "uuid", player.getUniqueId().toString(),
                 "ip", player.getAddress().getHostString(),
                 "message", event.getMessage(),
-                "canceld", event.isCancelled()
+                "canceled", event.isCancelled()
         ));
         if (main.connected) {
             new BukkitRunnable() {
